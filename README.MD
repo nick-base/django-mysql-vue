@@ -11,5 +11,12 @@ sudo docker run --name demo-mysql -e MYSQL_ROOT_PASSWORD=123 -p 3306:3306 -d mys
 
 # 运行
 cd web
-python manage.py runserver
+bin/run.sh
+```
+
+## 前端
+
+```shell
+cd h5
+npm run serve
 ```

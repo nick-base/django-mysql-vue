@@ -16,16 +16,18 @@ database(Table 2).
 #### Subpage2
 
 - Display Table 2 data as a chart, limit 100 items.
-- Skills:
-  - Backend Skills: Any python framework(flask\django\tornado\...)
-  - Frontend Skills: 
+
+#### Skills:
+
+- Backend Skills: Any python framework(flask\django\tornado\...)
+- Frontend Skills: 
   - Using one of the frameworks from vue\angular\react.
   - Using one of chart library from highcharts\D3 to draw
 graph.
   - Using ES6 or typescript.
-  - Database:  Using MySQL or MongoDB.
-  - A good code structure and style is a must.
-  - A good visual design for the webpage is a huge bonus.
+- Database:  Using MySQL or MongoDB.
+- A good code structure and style is a must.
+- A good visual design for the webpage is a huge bonus.
 
 #### Code Hosting
 
