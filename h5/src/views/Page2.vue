@@ -1,15 +1,33 @@
 <template>
   <div class="page2">
-    page 2
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Value</th>
+      </tr>
+      <tr v-for="(item, index) in data" :key="index">
+        <td>{{ item.id }}</td>
+        <td>{{ item.data }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
   name: 'page2',
-  created () {
+  data () {
+    return {
+      data: []
+    }
   },
-  methods: {
+  created () {
+    this.$http({
+      method: 'get',
+      url: '/api/save-data'
+    }).then((response) => {
+      this.data = response.data.data.values
+    })
   }
 }
 </script>
