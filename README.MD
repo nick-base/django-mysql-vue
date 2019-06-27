@@ -20,3 +20,9 @@ bin/run.sh
 cd h5
 npm run serve
 ```
+
+# 效果
+
+![1](./doc/1.png)
+![2](./doc/2.png)
+![3](./doc/3.png)
