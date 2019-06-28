@@ -1,9 +1,16 @@
 <template>
-  <div>
-    <div class="save">
-     <span @click="save">保存</span>
+  <div class="page1">
+    <div class="charts">
+      <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
     </div>
-    <vue-highcharts :options="options" ref="lineCharts"></vue-highcharts>
+    <div class="save-group">
+     <span class="save" @click="save">保存</span>
+    </div>
+    <div class="message">
+      <span v-for="(message, index) in messages" :key="index">
+        {{ message }} <br/>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -16,6 +23,7 @@ export default {
   },
   data () {
     return {
+      messages: [],
       timer: null,
       showLast: false,
       lastData: {
@@ -91,7 +99,7 @@ export default {
     this.update()
     this.timer = setInterval(() => {
       this.update()
-    }, 10000)
+    }, 15000)
   },
   beforeRouteLeave (to, from, next) {
     clearInterval(this.timer)
@@ -124,7 +132,7 @@ export default {
       this.$http.post('/api/save-data', {
         data: this.currentData.data
       }).then((response) => {
-        console.log(response.data)
+        this.messages.splice(0, 0, response.data.data)
       })
     }
   }
@@ -132,7 +140,23 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+.page1
+  width 800px
+  margin 20px auto
+
+.save-group
+  margin 20px 0
+  text-align center
+
 .save
-  color blue
+  padding 4px 7px
   cursor pointer
+  color #FFF
+  background-color #409EFF
+  border-color #409EFF
+  border-radius 4px
+
+.charts
+  width 800px
+  height 400px
 </style>

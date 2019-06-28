@@ -36,5 +36,5 @@ class SaveDataView(View):
             save_data = SaveData()
             save_data.data = data['data']
             save_data.save()
-            return response_success({'id': save_data.id})
-        return response_success({'id': -1})
+            return response_success({'id': save_data.id, 'data': save_data.data})
+        return response_success({'id': -1 })
